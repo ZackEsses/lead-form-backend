@@ -40,12 +40,16 @@ class handler(BaseHTTPRequestHandler):
                 data.get('lastName', ''),
                 data.get('phone', ''),
                 data.get('email', '')
+                request_json.get('capitalNeeded', ''),
+                request_json.get('monthlyDeposits', ''),
+                request_json.get('creditScore', ''),
+                request_json.get('businessLength', '')
             ]]
             body = {'values': values}
             
             service.spreadsheets().values().append(
                 spreadsheetId=SHEET_ID,
-                range='Sheet1!A:E',  # A to E for your 5 columns
+                range='Sheet1!A:I',  # A to I for your 9 columns
                 valueInputOption='RAW',
                 body=body
             ).execute()
