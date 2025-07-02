@@ -40,10 +40,10 @@ class handler(BaseHTTPRequestHandler):
                 data.get('lastName', ''),
                 data.get('phone', ''),
                 data.get('email', '')
-                request_json.get('capitalNeeded', ''),
-                request_json.get('monthlyDeposits', ''),
-                request_json.get('creditScore', ''),
-                request_json.get('businessLength', '')
+                data.get('capitalNeeded', ''),
+                data.get('monthlyDeposits', ''),
+                data.get('creditScore', ''),
+                data.get('businessLength', '')
             ]]
             body = {'values': values}
             
