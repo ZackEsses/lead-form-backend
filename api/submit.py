@@ -35,12 +35,16 @@ class handler(BaseHTTPRequestHandler):
             # Add to Google Sheet - matching your exact columns
             SHEET_ID = '1qHEOKd3DlrPBFMv_HfZ_OgES1p-brYEOmg9RqJ-ne-Y'
             values = [[
-                data.get('businessName', ''),
-                data.get('firstName', ''), 
-                data.get('lastName', ''),
-                data.get('phone', ''),
-                data.get('email', '')
-            ]]
+    request_json.get('businessName', ''),
+    request_json.get('firstName', ''), 
+    request_json.get('lastName', ''),
+    request_json.get('phone', ''),
+    request_json.get('email', ''),
+    request_json.get('capitalNeeded', ''),
+    request_json.get('monthlyDeposits', ''),
+    request_json.get('creditScore', ''),
+    request_json.get('businessLength', '')
+]]
             body = {'values': values}
             
             service.spreadsheets().values().append(
