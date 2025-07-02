@@ -49,7 +49,7 @@ class handler(BaseHTTPRequestHandler):
             
             service.spreadsheets().values().append(
                 spreadsheetId=SHEET_ID,
-                range='Sheet1!A:E',  # A to E for your 5 columns
+                range='Sheet1!A:I',
                 valueInputOption='RAW',
                 body=body
             ).execute()
