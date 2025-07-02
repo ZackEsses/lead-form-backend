@@ -35,21 +35,17 @@ class handler(BaseHTTPRequestHandler):
             # Add to Google Sheet - matching your exact columns
             SHEET_ID = '1qHEOKd3DlrPBFMv_HfZ_OgES1p-brYEOmg9RqJ-ne-Y'
             values = [[
-    request_json.get('businessName', ''),
-    request_json.get('firstName', ''), 
-    request_json.get('lastName', ''),
-    request_json.get('phone', ''),
-    request_json.get('email', ''),
-    request_json.get('capitalNeeded', ''),
-    request_json.get('monthlyDeposits', ''),
-    request_json.get('creditScore', ''),
-    request_json.get('businessLength', '')
-]]
+                data.get('businessName', ''),
+                data.get('firstName', ''), 
+                data.get('lastName', ''),
+                data.get('phone', ''),
+                data.get('email', '')
+            ]]
             body = {'values': values}
             
             service.spreadsheets().values().append(
                 spreadsheetId=SHEET_ID,
-                range='Sheet1!A:I',
+                range='Sheet1!A:E',  # A to E for your 5 columns
                 valueInputOption='RAW',
                 body=body
             ).execute()
