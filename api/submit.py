@@ -39,7 +39,7 @@ class handler(BaseHTTPRequestHandler):
                 data.get('firstName', ''), 
                 data.get('lastName', ''),
                 data.get('phone', ''),
-                data.get('email', '')
+                data.get('email', ''),
                 data.get('capitalNeeded', ''),
                 data.get('monthlyDeposits', ''),
                 data.get('creditScore', ''),
